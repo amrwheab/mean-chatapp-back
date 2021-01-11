@@ -34,6 +34,8 @@ app.all('*', (req, res , next) => {
   res.sendFile(path.join(__dirname, 'chatapp', 'index.html'))
 })
 
-http.listen(3000, () => {
+
+const PORT = process.env.PORT || 3000;
+http.listen(PORT, () => {
   console.log('server works in port 3000')
 })
