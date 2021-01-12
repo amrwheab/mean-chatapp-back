@@ -37,5 +37,5 @@ app.all('*', (req, res , next) => {
 
 const PORT = process.env.PORT || 3000;
 http.listen(PORT, () => {
-  console.log('server works in port 3000')
+  console.log(`server works in port ${PORT}`)
 })
