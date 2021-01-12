@@ -8,7 +8,7 @@ const path = require('path')
 
 dotenv.config()
 
-mongoose.connect(process.env.DB_Url,{ useNewUrlParser: true, useUnifiedTopology: true }, (mon) => {
+mongoose.connect('mongodb+srv://amr:60119915@cluster0.1stmr.mongodb.net/chat_app',{ useNewUrlParser: true, useUnifiedTopology: true }, (mon) => {
   console.log('connected to db')
 })
 

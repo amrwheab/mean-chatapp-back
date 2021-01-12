@@ -110,7 +110,7 @@ router.post('/register', (req, res, next) => {
           online: true
         });
         newUser.save().then((user) => {
-          let jwtSign = jwt.sign({id: user._id}, process.env.jwtSecret);
+          let jwtSign = jwt.sign({id: user._id}, 'sjkjkjsdhsjdkfnjsdjbs');
           res.header('auth-token', jwtSign).json({user, jwtSign});
           
         }).catch( err => {
@@ -129,7 +129,7 @@ router.post('/login', (req, res, next) => {
     if (user) {
       bcrypt.compare(req.body.password, user.password).then(result => {
         if (result) {
-          let jwtSign = jwt.sign({id: user._id}, process.env.jwtSecret);
+          let jwtSign = jwt.sign({id: user._id}, 'sjkjkjsdhsjdkfnjsdjbs');
           res.header('auth-token', jwtSign).json({user, jwtSign})
         } else {
           res.status(400).json('password is incorrect')
